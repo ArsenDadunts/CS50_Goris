@@ -3,7 +3,6 @@
 - [X] Harut Aghajanyan
 - [X] Kristina Tunyan
 - [X] Mariam Balasanyan
-- [X] Arsen Simonyan
 - [X] Zhenya Tatintsyan
 
 #### Git commands:
