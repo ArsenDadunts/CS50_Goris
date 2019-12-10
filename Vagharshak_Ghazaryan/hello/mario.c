@@ -10,13 +10,20 @@ int main(void)
         }
            while(x > 8 || x < 1);
 for (int i = 1; i <= x; i++){
-    for (k = x - 1; k >= i; k--){
-    printf(" ");   
+  for (k = x - 1; k >= i; k--){
+  printf(" ");   
     }
-      for (int j = x - i; j < x; j++)
+  for (int j = x - k; j <= x; j++)
       {
-   printf("#");
+ printf("#");
+          
    }
-      printf("\n");
+printf("  ");
+ for(int l = x - i; l < x; l++){
+           printf("#");
+          }
+    
+  printf("\n");
   }
 }
+
