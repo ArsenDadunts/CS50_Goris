@@ -8,8 +8,8 @@ int main()
 
     do
     {
-        float dollars = get_float("Change: ");
-        cents = round(dollars_owed * 100);
+       float dollars_owed = get_float("Change: ");
+       cents = round(dollars_owed * 100);
     }
     while (cents <= 0);
 
