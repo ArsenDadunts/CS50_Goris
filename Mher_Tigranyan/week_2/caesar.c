@@ -1,33 +1,54 @@
 #include <stdio.h>
 #include <cs50.h>
-#include <string.h> 
+#include <string.h>
+#include <stdlib.h>
 
-int main(int argc,char** argv)
+int main(int argc, string argv[])
 {
-    if (argv == NULL)
+    int k;
+    if (argv[1] == NULL)
     {
+        printf("Usage: ./caesar key\n");
         return 1;
     }
-    int size = sizeof(argv)/sizeof(argv[0]);
-    for (int i = 0; i < size; i++)
+    if (argv[2] != NULL)
     {
-        if(int(argv[i]) < 0 || int(argv[i]) > 9)
+        printf("Usage: ./caesar key\n");
+        return 1;
+    }
+    for (int i = 0; i < strlen(argv[1]); i++)
+    {
+        if ((int) argv[1][i] < 48 || (int) argv[1][i] > 57)
         {
+            printf("Usage: ./caesar key\n");
             return 1;
         }
     }
-    int k = int(argv[]);
-    char c;
+    k = atoi(argv[1]);
+    int b;
+    int a;
+    char c[strlen(argv[1])];
     string plaintext = get_string("plaintext: ");
     printf("ciphertext: ");
     for (int j = 0; j < strlen(plaintext); j++)
     {
-        if (a < plaintext(j) < z  || A < plaintext(j) < Z)
+        if ('A' <= plaintext[j] && plaintext[j] <= 'Z')
         {
-            c = (plaintext(j) + k) % 26;
-            printf("%s", c);
+            b = ((int) plaintext[j] + k - 65);
+            a = b % 26 + 65;
+            printf("%c", (int) a);
+        }
+        else if ('a' <= plaintext[j] && plaintext[j] <= 'z')
+        {
+            b = ((int) plaintext[j] + k - 97);
+            a = b % 26 + 97;
+            printf("%c", (int) a);
+        }
+        else
+        {
+            printf("%c", plaintext[j]);
         }
     }
+    printf("\n");
     return 0;
-    
 }
