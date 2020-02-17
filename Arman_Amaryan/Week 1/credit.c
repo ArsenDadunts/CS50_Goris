@@ -14,30 +14,55 @@ int main(void)
     int sum = 0;
     long n = credit;
     int mnacord;
+    int b;
+    int c = 0;
     while (n > 0)
     {
         mnacord = n % 10;
         n = n / 10;
         count++;
-        if(count % 2 == 0)
+        if (count % 2 == 0)
         {
             int temp = mnacord * 2;
-            if (temp > 9) {
+            if (temp > 9)
+            {
                 sum += 1;
                 sum += (temp % 10);
             }
-            else {
+            else
+            {
                 sum += temp;
             }
-        } else {
+        }
+        else
+        {
             sum += mnacord;
+        }
+
+    }
+    if (count == 15)
+    {
+        while (c < 14)
+        {
+            b = credit % 10;
+            credit = credit / 10;
+            c++;
+        }
+    }
+    else
+    {
+        while (c < 15)
+        {
+            b = credit % 10;
+            credit = credit / 10;
+            c++;
         }
     }
     if ((count == 16 || count == 13) && sum % 10 == 0 && mnacord == 4)
     {
-    printf("VISA\n");
+        printf("VISA\n");
     }
-    else if (count == 15 && sum % 10 == 0 && mnacord == 3)
+    else if (count == 15 && sum % 10 == 0 && mnacord == 3 && (b == 4 || b == 7))
     {
         printf("AMEX\n");
     }
@@ -45,19 +70,21 @@ int main(void)
     {
         printf("JCB\n");
     }
-    else if (count == 16 && sum % 10 == 0 && (mnacord == 5 || mnacord == 2))
-             {
-                 printf ("MASTERCARD\n");
-             }
+    else if (count == 16 && sum % 10 == 0 && (mnacord == 5 || mnacord == 2) && (b == 1 || b == 2 || b == 3 || b == 4 || b == 5))
+    {
+        printf("MASTERCARD\n");
+    }
     else if (count == 14 & sum % 10 == 0 && mnacord == 3)
-             {
-                 printf ("DINERS CLUB\n");
-             }
+    {
+        printf("DINERS CLUB\n");
+    }
     else if (count == 16 & sum % 10 == 0 && mnacord == 6)
     {
-        printf ("DISCOVER\n");
+        printf("DISCOVER\n");
     }
-    else {
+    else
+    {
         printf("INVALID\n");
     }
 }
+

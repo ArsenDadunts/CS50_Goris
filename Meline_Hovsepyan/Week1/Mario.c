@@ -6,9 +6,9 @@ int main(void)
       m = get_int("Please enter the desired tall between 1-8 inclusive to print\n: ");
       }
     while (m > 8 || m < 1);
-   for(int row = 1; row <= m; row++) 
-   {       
-       for(int space = 1; space <= m-row; space++) 
+   for(int row = 1; row <= m; row++)
+   {
+       for(int space = 1; space <= m-row; space++)
        {
            printf(" ");
        }
