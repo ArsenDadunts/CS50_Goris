@@ -17,7 +17,7 @@ int main(void)
         {
             if (temp * 2 >= 10)
             {
-                sum += 1 + ((temp * 2) % 10);
+               sum += 1 + ((temp * 2) % 10);
             }
             else
             {
