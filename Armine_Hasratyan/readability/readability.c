@@ -7,9 +7,9 @@
 int main(void)
 {
     string text = get_string("Text: ");
-    int letters = 0;
-    int words = 1;
-    int sentences = 0;
+    float letters = 0;
+    float words = 1;
+    float sentences = 0;
 
     for (int i = 0, n = strlen(text); i < n; i++)
     {
